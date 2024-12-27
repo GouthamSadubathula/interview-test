@@ -1,11 +1,12 @@
 import express from "express";
+import moviesRoute from "./routes/movies";
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 
-app.get("/", (req: express.Request, res: express.Response) => {
-    res.status(200).send("Hello World!");
-})
+// Routes
+app.use("/movies", moviesRoute);
 
 export default app;
